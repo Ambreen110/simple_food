@@ -8,13 +8,108 @@
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Express Eat</title>
+    <style>
+        /* Adding some animation and hover effects */
+        .brand-name {
+            width: 150px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .brand-name:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hamburger icon animation */
+        .hamburger {
+            cursor: pointer;
+        }
+
+        .hamburger:hover .bar {
+            background-color: #ff6600;
+        }
+
+        .menu-bar ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-bar ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .menu-bar ul li a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .menu-bar ul li a:hover {
+            color: #ff6600;
+        }
+
+        .menu-bar ul li a::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ff6600;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu-bar ul li a:hover::before {
+            visibility: visible;
+            width: 100%;
+        }
+
+        /* Dynamic hover effect for social icons */
+        .social-btn a {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #000;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .social-btn a:hover {
+            color: #ff6600;
+            transform: scale(1.2);
+        }
+
+        /* Footer style */
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .quick-bar a {
+            margin: 0 15px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .quick-bar a:hover {
+            color: #ff6600;
+        }
+
+        .quick-bar {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
      <!--- Navigation Bar -->
      <div class="about">
         <div class="header">
             <nav class="nav-bar">
-                <img src="./img/Logo.png" class="brand-name">
+                <img src="./img/Logo.png" class="brand-name" alt="Express Eat Logo">
                 <a href="#" class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -29,23 +124,16 @@
                 </div>
             </nav>
 
-        <!--About Me Section-->
+        <!--About Us Section-->
             <div class="wrapper">
                 <div class="row">
                     <div class="about-content">
                         <h1>About Us</h1>
-                        <h3>Welcome to Express Eat</h3>
-                        <p>G&R Sizzling, formerly known as Express Eat, started as a local business in Makati City, providing delicious meals to the citizens, employees, and students in the area. Our goal has always been to offer a diverse range of flavorful dishes that cater to various tastes and preferences.
-                         </p>
-                        <p>As G&R Sizzling transitions to a more systematic approach of delivering foods to our clients and customers, Express Eat continues to be the heart of our kitchen operations. Our platform features a wide variety of recipes not only from the Philippines but also from different countries around the world. With our user-friendly search bar, visitors can easily find the recipe they desire.</p>
-
-                        <p>We take pride in providing detailed instructions on how to prepare each recipe, ensuring that even novice cooks can create delicious meals with ease. As G&R Sizzling expands its horizons and ventures into new culinary territories, we remain committed to providing our users with exceptional recipes and culinary experiences.  </p>
-                    
-                        <p>We invite you to explore our website and discover the perfect recipe to satisfy your cravings. Welcome to G&R Sizzling, where culinary delights await!
-</p>
+                        <h3>Welcome to Food Mood</h3>
+                        <p>Welcome to Food Mood, where every craving finds its match! Whether you're in the mood for comfort food, a quick healthy snack, or an indulgent dessert, we've got the perfect recipe for you. With easy-to-follow instructions, stunning visuals, and a variety of dishes from around the world, Food Mood turns everyday cooking into a delightful adventure. Get inspired, try new flavors, and make every meal a moment to savor. Explore your cravings, one recipe at a time – because at Food Mood, we believe great food creates great moods!</p>
                     </div>
                     <div class="img-me">
-                        <img class="img-me" src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t39.30808-6/371110248_609570948031931_6986145411752667084_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=L9iT0DE3FAcAb4URRU_&_nc_ht=scontent.fmnl30-2.fna&oh=00_AfBw2VpEE_FMSADj-CJijzacNtiRO-1aI_YEGihqiao-yw&oe=661A2980" alt="Christian Medallada">
+                        <img class="img-me" src="/img/happy-food.jpg" alt="Placeholder image">
                     </div>
                 </div>
             </div>
@@ -53,26 +141,37 @@
     </div>
 
     <!--Footer-->
-    
     <div class="footer">
         <div class="social-btn">
-            <a href="https://www.facebook.com/Cmedsss" target="_blank" ><i class="	fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/tiaanmeds/" target="_blank" ><i class="	fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/tianmeds/" target="_blank"><i class="	fab fa-linkedin"></i></a>
-            <a href="https://github.com/TianMeds" target="_blank" "><i class="	fab fa-github"></i></a>
+            <a href="https://www.facebook.com/Cmedsss" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/tiaanmeds/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/tianmeds/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/TianMeds" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-            <div class="quick-bar">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        <p>Copyright &copy; 2022 Christian Medallada. All right reserved</p>  
+        <div class="quick-bar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>Copyright &copy; 2024 Ambreen. All rights reserved</p>  
     </div>
-    
     <!--Ending of Footer-->
 
-    <!--Javascript-->
-<script src="./assets/index.js"></script>
+    <!--Dynamic JavaScript-->
+    <script>
+        // Dynamic navigation bar toggling for mobile view
+        const hamburger = document.querySelector('.hamburger');
+        const menuBar = document.querySelector('.menu-bar');
+        hamburger.addEventListener('click', () => {
+            menuBar.classList.toggle('active');
+        });
+
+        // Scroll to top on page load
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    </script>
     
+    <script src="./assets/index.js"></script>
 </body>
 </html>
